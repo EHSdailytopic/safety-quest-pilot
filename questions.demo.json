@@ -4,107 +4,149 @@
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 1,
-    "questionType": "MCQ",
-    "question": "When should a forklift operator fasten the seat belt?",
-    "instruction": "Choose one answer.",
-    "optionA": "Only when driving outdoors",
-    "optionB": "Only when carrying a heavy load",
-    "optionC": "Before operating the forklift",
-    "optionD": "Only when driving at high speed",
-    "correctAnswer": "C",
-    "explanation": "The seat belt should be fastened before operating the forklift.",
-    "gameConfig": {}
+    "variant": 1,
+    "questionType": "SpotHazard",
+    "question": "Spot the unsafe behavior before the forklift moves.",
+    "instruction": "Tap the unsafe area in the scene.",
+    "gameConfig": {
+      "sceneTitle": "Pre-operation check",
+      "sceneObjects": [
+        {
+          "icon": "🚜",
+          "x": 41,
+          "y": 38,
+          "size": 84
+        },
+        {
+          "icon": "👷",
+          "x": 48,
+          "y": 18,
+          "size": 44
+        },
+        {
+          "icon": "📱",
+          "x": 72,
+          "y": 19,
+          "size": 34
+        },
+        {
+          "icon": "🦺",
+          "x": 17,
+          "y": 18,
+          "size": 36
+        },
+        {
+          "icon": "⚠️",
+          "x": 83,
+          "y": 67,
+          "size": 34
+        }
+      ],
+      "zones": [
+        {
+          "id": "Z1",
+          "label": "Safety vest available",
+          "x": 8,
+          "y": 7,
+          "w": 24,
+          "h": 30
+        },
+        {
+          "id": "Z2",
+          "label": "Operator using a phone before movement",
+          "x": 64,
+          "y": 7,
+          "w": 25,
+          "h": 31
+        },
+        {
+          "id": "Z3",
+          "label": "Forklift body",
+          "x": 30,
+          "y": 31,
+          "w": 42,
+          "h": 34
+        },
+        {
+          "id": "Z4",
+          "label": "Warning sign near route",
+          "x": 74,
+          "y": 56,
+          "w": 20,
+          "h": 28
+        }
+      ]
+    },
+    "correctAnswer": "Z2",
+    "explanation": "The unsafe behavior is using a phone while preparing to operate the forklift.",
+    "hint": "Look at what the operator is doing, not the forklift itself.",
+    "firstXP": 10,
+    "retryXP": 5
   },
   {
     "questionId": "T01-L1-Q02",
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 1,
-    "questionType": "TrueFalse",
-    "question": "A forklift seat belt is optional when the travel distance is very short.",
-    "instruction": "Choose True or False.",
-    "optionA": "True",
-    "optionB": "False",
-    "optionC": "",
-    "optionD": "",
-    "correctAnswer": "B",
-    "explanation": "Short travel distance does not remove the need to use the seat belt.",
-    "gameConfig": {}
-  },
-  {
-    "questionId": "T01-L1-Q03",
-    "topic": "T01",
-    "topicTitle": "Forklift Safety",
-    "level": 1,
-    "questionType": "ImageChoice",
-    "question": "Which operator is following the safer practice?",
-    "instruction": "Select one visual card.",
-    "optionA": "Operator A",
-    "optionB": "Operator B",
-    "optionC": "",
-    "optionD": "",
-    "correctAnswer": "A",
-    "explanation": "The safer practice is to fasten the seat belt before operating the forklift.",
+    "variant": 2,
+    "questionType": "DragClassify",
+    "question": "Sort each action into SAFE or UNSAFE.",
+    "instruction": "Drag a card, or tap a card and then tap a category.",
     "gameConfig": {
-      "cards": [
+      "categories": [
         {
-          "id": "A",
-          "icon": "✅",
-          "label": "Operator seated with seat belt fastened"
+          "id": "SAFE",
+          "label": "SAFE PRACTICE",
+          "icon": "✅"
         },
         {
-          "id": "B",
-          "icon": "⚠️",
-          "label": "Operator seated without seat belt"
+          "id": "UNSAFE",
+          "label": "UNSAFE PRACTICE",
+          "icon": "⚠️"
+        }
+      ],
+      "items": [
+        {
+          "id": "S1",
+          "text": "Fasten the seat belt"
+        },
+        {
+          "id": "S2",
+          "text": "Check a phone before moving"
+        },
+        {
+          "id": "S3",
+          "text": "Check that the route is clear"
+        },
+        {
+          "id": "S4",
+          "text": "Stand while the forklift is moving"
+        },
+        {
+          "id": "S5",
+          "text": "Report a damaged restraint"
+        },
+        {
+          "id": "S6",
+          "text": "Skip the belt for a short trip"
         }
       ]
-    }
+    },
+    "correctAnswer": "SAFE:S1,S3,S5|UNSAFE:S2,S4,S6",
+    "explanation": "Safe practice includes using the restraint, checking the route, and reporting damaged safety equipment.",
+    "hint": "Think about whether the action reduces risk before or during operation.",
+    "firstXP": 10,
+    "retryXP": 5
   },
   {
     "questionId": "T01-L2-Q01",
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 2,
-    "questionType": "Scenario",
-    "question": "You only need to move one pallet about 20 metres at low speed. What should you do?",
-    "instruction": "Choose the safest action.",
-    "optionA": "Skip the seat belt because the trip is short",
-    "optionB": "Fasten the seat belt before moving",
-    "optionC": "Wear it only if another forklift is nearby",
-    "optionD": "Drive slowly without it",
-    "correctAnswer": "B",
-    "explanation": "Short distance and low speed do not replace the need to use the restraint.",
-    "gameConfig": {}
-  },
-  {
-    "questionId": "T01-L2-Q02",
-    "topic": "T01",
-    "topicTitle": "Forklift Safety",
-    "level": 2,
-    "questionType": "MultiSelect",
-    "question": "Which TWO actions are appropriate before operating a forklift?",
-    "instruction": "Select two answers.",
-    "optionA": "Fasten the seat belt",
-    "optionB": "Check the surrounding area",
-    "optionC": "Use a phone while starting",
-    "optionD": "Stand while moving",
-    "correctAnswer": "A|B",
-    "explanation": "Fastening the restraint and checking the surrounding area are appropriate pre-operation actions.",
-    "gameConfig": {
-      "minSelections": 2,
-      "maxSelections": 2
-    }
-  },
-  {
-    "questionId": "T01-L2-Q03",
-    "topic": "T01",
-    "topicTitle": "Forklift Safety",
-    "level": 2,
+    "variant": 1,
     "questionType": "Sequence",
-    "question": "Put these steps in a reasonable order before moving the forklift.",
-    "instruction": "Use the arrows to arrange the steps.",
-    "correctAnswer": "S1|S2|S3|S4",
-    "explanation": "The operator should be seated and restrained, check the route, then begin movement.",
+    "question": "Build the safe start-up sequence.",
+    "instruction": "Reorder the steps before moving the forklift.",
     "gameConfig": {
       "items": [
         {
@@ -117,109 +159,274 @@
         },
         {
           "id": "S3",
-          "text": "Check that the route is clear"
+          "text": "Check mirrors and surrounding area"
         },
         {
           "id": "S4",
+          "text": "Confirm the travel path is clear"
+        },
+        {
+          "id": "S5",
           "text": "Begin movement"
         }
       ]
-    }
+    },
+    "correctAnswer": "S1|S2|S3|S4|S5",
+    "explanation": "The operator should be seated and restrained, check the surroundings and path, then begin movement.",
+    "hint": "Movement should be the last step.",
+    "firstXP": 15,
+    "retryXP": 8
   },
   {
-    "questionId": "T01-L2-Q04",
+    "questionId": "T01-L2-Q02",
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 2,
+    "variant": 2,
     "questionType": "Matching",
-    "question": "Match each forklift safety feature with its main function.",
-    "instruction": "Select one function for each feature.",
-    "correctAnswer": "H1-C1|H2-C2|H3-C3",
-    "explanation": "Each control has a different safety function: restraint, warning, and visibility.",
+    "question": "Match each forklift safety feature to its main function.",
+    "instruction": "Pair every item with one function.",
     "gameConfig": {
       "left": [
         {
-          "id": "H1",
-          "text": "Seat belt"
+          "id": "M1",
+          "text": "Seat belt",
+          "icon": "🪢"
         },
         {
-          "id": "H2",
-          "text": "Horn"
+          "id": "M2",
+          "text": "Horn",
+          "icon": "📣"
         },
         {
-          "id": "H3",
-          "text": "Beacon"
+          "id": "M3",
+          "text": "Beacon",
+          "icon": "🚨"
+        },
+        {
+          "id": "M4",
+          "text": "Mirrors",
+          "icon": "🪞"
         }
       ],
       "right": [
         {
-          "id": "C1",
+          "id": "F1",
           "text": "Helps keep the operator within the protective area"
         },
         {
-          "id": "C2",
+          "id": "F2",
           "text": "Warns nearby people"
         },
         {
-          "id": "C3",
+          "id": "F3",
           "text": "Improves equipment visibility"
+        },
+        {
+          "id": "F4",
+          "text": "Improves awareness of surrounding traffic"
         }
       ]
-    }
+    },
+    "correctAnswer": "M1-F1|M2-F2|M3-F3|M4-F4",
+    "explanation": "Each control addresses a different risk: restraint, warning, visibility, or situational awareness.",
+    "hint": "Match the physical function, not the appearance.",
+    "firstXP": 15,
+    "retryXP": 8
   },
   {
     "questionId": "T01-L3-Q01",
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 3,
-    "questionType": "SpotHazard",
-    "question": "Click the unsafe condition in the scene.",
-    "instruction": "Select one highlighted zone.",
-    "correctAnswer": "Z2",
-    "explanation": "The unsafe condition is the operator preparing to drive without the seat belt fastened.",
+    "variant": 1,
+    "questionType": "Branching",
+    "question": "Make the safest decisions through the forklift scenario.",
+    "instruction": "Your choices change what happens next.",
     "gameConfig": {
-      "sceneTitle": "Forklift pre-operation scene",
-      "zones": [
-        {
-          "id": "Z1",
-          "label": "Seat belt is fastened",
-          "x": 8,
-          "y": 18,
-          "w": 36,
-          "h": 28
+      "startNode": "N1",
+      "nodes": {
+        "N1": {
+          "text": "You are assigned a forklift, but the seat belt is damaged.",
+          "options": [
+            {
+              "value": "A",
+              "label": "Drive slowly and finish the task",
+              "next": "FAIL1"
+            },
+            {
+              "value": "B",
+              "label": "Stop, report the defect, and use a safe replacement",
+              "next": "N2"
+            }
+          ]
         },
-        {
-          "id": "Z2",
-          "label": "Operator without seat belt",
-          "x": 55,
-          "y": 18,
-          "w": 36,
-          "h": 28
+        "N2": {
+          "text": "A replacement forklift is available. What do you do before moving?",
+          "options": [
+            {
+              "value": "A",
+              "label": "Perform the required checks and fasten the seat belt",
+              "next": "N3"
+            },
+            {
+              "value": "B",
+              "label": "Skip the checks because the task is urgent",
+              "next": "FAIL2"
+            }
+          ]
         },
-        {
-          "id": "Z3",
-          "label": "Clear travel path",
-          "x": 30,
-          "y": 62,
-          "w": 40,
-          "h": 22
+        "N3": {
+          "text": "The travel path is partially blocked by a pallet.",
+          "options": [
+            {
+              "value": "A",
+              "label": "Squeeze through slowly",
+              "next": "FAIL3"
+            },
+            {
+              "value": "B",
+              "label": "Use the horn and continue",
+              "next": "FAIL4"
+            },
+            {
+              "value": "C",
+              "label": "Stop and have the route cleared before proceeding",
+              "next": "SUCCESS"
+            }
+          ]
+        },
+        "FAIL1": {
+          "terminal": true,
+          "result": "unsafe",
+          "text": "Unsafe ending: damaged restraint equipment should not be ignored."
+        },
+        "FAIL2": {
+          "terminal": true,
+          "result": "unsafe",
+          "text": "Unsafe ending: urgency does not replace pre-operation checks."
+        },
+        "FAIL3": {
+          "terminal": true,
+          "result": "unsafe",
+          "text": "Unsafe ending: do not force the forklift through an obstructed route."
+        },
+        "FAIL4": {
+          "terminal": true,
+          "result": "unsafe",
+          "text": "Unsafe ending: sounding the horn does not make an obstructed route safe."
+        },
+        "SUCCESS": {
+          "terminal": true,
+          "result": "safe",
+          "text": "Safe ending: defect controlled, checks completed, and the route is clear."
         }
-      ]
-    }
+      }
+    },
+    "correctAnswer": "B|A|C",
+    "explanation": "The safe path is to stop for damaged safety equipment, complete required checks, and ensure the travel path is clear.",
+    "hint": "Choose the action that controls the hazard before continuing.",
+    "firstXP": 20,
+    "retryXP": 10
   },
   {
     "questionId": "T01-L3-Q02",
     "topic": "T01",
     "topicTitle": "Forklift Safety",
     "level": 3,
-    "questionType": "Puzzle",
-    "question": "Complete the safety word: B _ L T",
-    "instruction": "Type the missing letter to complete the word.",
-    "correctAnswer": "E",
-    "explanation": "The completed word is BELT.",
+    "variant": 2,
+    "questionType": "TimedInspection",
+    "question": "Find THREE hazards before time runs out.",
+    "instruction": "Tap three unsafe areas within 25 seconds.",
     "gameConfig": {
-      "inputMode": "text",
-      "placeholder": "Type your answer"
-    }
+      "timeLimit": 25,
+      "requiredSelections": 3,
+      "sceneTitle": "25-second forklift inspection",
+      "sceneObjects": [
+        {
+          "icon": "🚜",
+          "x": 42,
+          "y": 42,
+          "size": 82
+        },
+        {
+          "icon": "📦",
+          "x": 78,
+          "y": 59,
+          "size": 46
+        },
+        {
+          "icon": "📱",
+          "x": 18,
+          "y": 20,
+          "size": 34
+        },
+        {
+          "icon": "🧴",
+          "x": 72,
+          "y": 18,
+          "size": 36
+        },
+        {
+          "icon": "🧯",
+          "x": 12,
+          "y": 70,
+          "size": 38
+        },
+        {
+          "icon": "👷",
+          "x": 48,
+          "y": 17,
+          "size": 42
+        }
+      ],
+      "zones": [
+        {
+          "id": "Z1",
+          "label": "Phone distraction",
+          "x": 8,
+          "y": 8,
+          "w": 24,
+          "h": 25
+        },
+        {
+          "id": "Z2",
+          "label": "Fire extinguisher available",
+          "x": 5,
+          "y": 61,
+          "w": 23,
+          "h": 29
+        },
+        {
+          "id": "Z3",
+          "label": "Unsecured bottle/item near operating area",
+          "x": 63,
+          "y": 7,
+          "w": 25,
+          "h": 27
+        },
+        {
+          "id": "Z4",
+          "label": "Pallet obstructing the travel path",
+          "x": 66,
+          "y": 48,
+          "w": 29,
+          "h": 33
+        },
+        {
+          "id": "Z5",
+          "label": "Forklift itself",
+          "x": 30,
+          "y": 32,
+          "w": 41,
+          "h": 36
+        }
+      ]
+    },
+    "correctAnswer": "Z1|Z3|Z4",
+    "explanation": "The hazards are distraction, an unsecured item near the operating area, and an obstructed travel path.",
+    "hint": "Not every object in the scene is a hazard.",
+    "firstXP": 20,
+    "retryXP": 10
   }
 ]

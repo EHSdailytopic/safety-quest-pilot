@@ -1,38 +1,50 @@
-# Safety Quest Multi-type Pilot
+# Safety Quest — Interactive Pilot v2
 
-## What this starter tests
-One topic (Forklift Safety) with multiple question types:
-MCQ, True/False, Image Choice, Scenario, Multi Select, Sequence, Matching, Spot Hazard, Puzzle.
+This version intentionally minimizes multiple-choice questions.
 
-## Quick UI test
-1. Upload all files to a GitHub repository.
-2. Settings -> Pages -> Deploy from branch -> main / root.
-3. Open the GitHub Pages URL.
-4. Keep **Demo Mode** checked.
-5. Choose Level and click START.
-6. Use Previous/Next type to inspect the different renderers.
+## Pilot game mechanics
+- Level 1: Spot Hazard, Drag / Classify
+- Level 2: Sequence, Matching
+- Level 3: Branching Scenario, Timed Inspection
 
-## Connect Power Automate
-Turn Demo Mode off, then paste:
-- Flow 1: Get Question URL
-- Flow 2: Submit Answer URL
+## Demo Mode
+The repository includes `questions.demo.json` with local demo answer keys so the UI can be tested without Power Automate.
 
-Flow 1 response should include:
-questionId, topic, topicTitle, level, questionType, question, instruction,
-optionA, optionB, optionC, optionD, gameConfig.
+IMPORTANT: demo answer keys are public if this repository is public. They are only for UI testing.
+Production must get questions from Power Automate and must NOT return Correct_Answer.
 
-`gameConfig` may be a JSON object or a JSON string.
+## Upload to an existing GitHub Pages repo
+Replace / upload these files in the repository root:
+- index.html
+- style.css
+- app.js
+- questions.demo.json
+- README.md
 
-Flow 2 continues to receive one `answer` string.
-Encoding:
-- MCQ / TrueFalse / Scenario / ImageChoice: `A`
-- MultiSelect: `A|B`
-- Sequence: `S1|S2|S3|S4`
-- Matching: `H1-C1|H2-C2|H3-C3`
+GitHub Pages can remain configured as:
+- Branch: main
+- Folder: /(root)
+
+## Production Flow 1 response
+For interactive questions, return at minimum:
+- questionId
+- topic
+- topicTitle
+- level
+- questionType
+- question
+- instruction
+- gameConfig
+
+Do NOT return `Correct_Answer`.
+
+## Flow 2 request
+The frontend still sends one normalized `answer` string:
 - SpotHazard: `Z2`
-- Puzzle: uppercase trimmed text, e.g. `E`
+- DragClassify: `SAFE:S1,S3,S5|UNSAFE:S2,S4,S6`
+- Sequence: `S1|S2|S3|S4|S5`
+- Matching: `M1-F1|M2-F2|M3-F3|M4-F4`
+- Branching: `B|A|C`
+- TimedInspection: `Z1|Z3|Z4`
 
-IMPORTANT:
-Do not return Correct_Answer from Flow 1.
-Do not store Correct_Answer inside Game_Config.
-Power Automate / SharePoint remains the source of truth.
+Power Automate can keep equality-based checking after trim / uppercase normalization.

@@ -2,56 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Safety Quest — Multi-type Pilot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safety Quest — Interactive Pilot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
+<main class="app-shell">
+  <header class="topbar">
+    <div>
+      <div class="brand">🛡️ Safety Quest</div>
+      <div class="subbrand">Forklift Safety • Interactive Pilot</div>
+    </div>
+    <div class="stats">
+      <div class="stat">🔥 <span id="streak">1</span></div>
+      <div class="stat">⭐ <span id="xp">0</span> XP</div>
+    </div>
+  </header>
+
+  <section class="path-card">
+    <div class="path-head">
       <div>
-        <div class="brand">🛡️ Safety Quest</div>
-        <div class="subtitle">Forklift Safety — Multi-type Pilot</div>
+        <strong>Learning Path</strong>
+        <div class="muted">Recognize → Apply → Decide</div>
       </div>
-      <div class="stats"><span>🔥 1</span><span>⭐ <b id="xp">0</b> XP</span></div>
-    </header>
+      <div id="levelBadge" class="level-badge">LEVEL 1</div>
+    </div>
+    <div class="path">
+      <button class="node active" data-level="1"><span>👀</span><b>1</b><small>Recognize</small></button>
+      <div class="line"></div>
+      <button class="node" data-level="2"><span>🛠️</span><b>2</b><small>Apply</small></button>
+      <div class="line"></div>
+      <button class="node" data-level="3"><span>🧠</span><b>3</b><small>Decide</small></button>
+    </div>
+  </section>
 
-    <section class="panel dev">
-      <details open>
-        <summary>Developer settings</summary>
-        <label><input id="demoMode" type="checkbox" checked> Demo Mode (no Power Automate)</label>
-        <label>Get Question Flow URL <input id="getUrl" type="url" placeholder="Flow 1 URL"></label>
-        <label>Submit Answer Flow URL <input id="submitUrl" type="url" placeholder="Flow 2 URL"></label>
-        <label>MSNV <input id="msnv" value="123456"></label>
-        <label>Level
-          <select id="level">
-            <option value="1">Level 1</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-          </select>
-        </label>
-        <button id="startBtn">START / LOAD QUESTION</button>
-      </details>
-    </section>
+  <section id="gameCard" class="game-card">
+    <div class="game-meta">
+      <span id="typePill" class="type-pill">GAME</span>
+      <span id="questionId" class="muted"></span>
+    </div>
+    <div class="progress-track"><div id="progressBar"></div></div>
 
-    <section id="gameCard" class="game-card hidden">
-      <div class="meta"><span id="typePill"></span><span id="questionId"></span></div>
-      <div class="progress"><div id="progressBar"></div></div>
-      <h2 id="questionText"></h2>
-      <p id="instruction"></p>
-      <div id="gameArea"></div>
-      <button id="submitBtn" class="primary">CHECK</button>
-      <div id="feedback" class="feedback hidden"></div>
-    </section>
+    <h1 id="questionText">Loading…</h1>
+    <p id="instruction" class="instruction"></p>
 
-    <section class="panel">
-      <div class="row">
-        <button id="prevDemo" class="secondary">← Previous type</button>
-        <button id="nextDemo" class="secondary">Next type →</button>
-      </div>
-      <small>Previous/Next buttons are for Demo Mode UI testing only.</small>
-    </section>
-  </main>
-  <script src="app.js"></script>
+    <div id="gameArea"></div>
+
+    <div id="timerWrap" class="timer-wrap hidden">
+      <span>⏱️</span>
+      <div class="timer-track"><div id="timerBar"></div></div>
+      <b id="timerText">25</b>
+    </div>
+
+    <div id="feedback" class="feedback hidden"></div>
+
+    <button id="checkBtn" class="primary">CHECK</button>
+    <button id="nextBtn" class="secondary hidden">NEXT GAME →</button>
+  </section>
+
+  <section class="developer-card">
+    <details>
+      <summary>Developer / API settings</summary>
+      <label class="toggle-row">
+        <input id="demoMode" type="checkbox" checked>
+        Demo Mode
+      </label>
+      <p class="muted small">Demo Mode contains local answer keys only for UI testing.</p>
+      <label>Get Question Flow URL
+        <input id="getUrl" type="url" placeholder="Flow 1 URL">
+      </label>
+      <label>Submit Answer Flow URL
+        <input id="submitUrl" type="url" placeholder="Flow 2 URL">
+      </label>
+      <label>MSNV
+        <input id="msnv" value="123456">
+      </label>
+      <button id="loadApiBtn" class="secondary">LOAD FROM POWER AUTOMATE</button>
+    </details>
+  </section>
+</main>
+
+<script src="app.js"></script>
 </body>
 </html>
