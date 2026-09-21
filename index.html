@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Safety Quest — Multi-type Pilot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">🛡️ Safety Quest</div>
+        <div class="subtitle">Forklift Safety — Multi-type Pilot</div>
+      </div>
+      <div class="stats"><span>🔥 1</span><span>⭐ <b id="xp">0</b> XP</span></div>
+    </header>
+
+    <section class="panel dev">
+      <details open>
+        <summary>Developer settings</summary>
+        <label><input id="demoMode" type="checkbox" checked> Demo Mode (no Power Automate)</label>
+        <label>Get Question Flow URL <input id="getUrl" type="url" placeholder="Flow 1 URL"></label>
+        <label>Submit Answer Flow URL <input id="submitUrl" type="url" placeholder="Flow 2 URL"></label>
+        <label>MSNV <input id="msnv" value="123456"></label>
+        <label>Level
+          <select id="level">
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+          </select>
+        </label>
+        <button id="startBtn">START / LOAD QUESTION</button>
+      </details>
+    </section>
+
+    <section id="gameCard" class="game-card hidden">
+      <div class="meta"><span id="typePill"></span><span id="questionId"></span></div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <h2 id="questionText"></h2>
+      <p id="instruction"></p>
+      <div id="gameArea"></div>
+      <button id="submitBtn" class="primary">CHECK</button>
+      <div id="feedback" class="feedback hidden"></div>
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <button id="prevDemo" class="secondary">← Previous type</button>
+        <button id="nextDemo" class="secondary">Next type →</button>
+      </div>
+      <small>Previous/Next buttons are for Demo Mode UI testing only.</small>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
